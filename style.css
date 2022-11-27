@@ -1,0 +1,142 @@
+:root{
+    --color-fondo:#a9a9c5;
+    --color-header-footer:#908db8;
+    --color-cajas-internas:#d0d2e1;
+    --paddin-todo: 2rem;
+    --letra-header:'Archivo Black', sans-serif;;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: grid;
+    background-color: var(--color-fondo);
+    grid-template-columns: repeat(auto-fit, minmax(30%,1fr));
+    grid-template-rows: 14.5vh 38vh 19vh 14vh;
+    grid-template-areas: 
+        "header header header"
+        "contenido contenido sidebar"
+        "widget1 widget2 sidebar"
+        "footer footer footer";
+    gap: 2rem;
+    padding: 2rem;
+}
+
+header{
+    background-color: var(--color-header-footer);
+    grid-area: header;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--paddin-todo);
+}
+
+h1{
+    font-family: var(--letra-header);
+    font-size: 2.5rem;
+}
+
+header img{
+    height: 8rem;
+    width: 8rem;
+}
+
+main{
+    background-color: var(--color-cajas-internas);
+    grid-area: contenido;
+    padding: var(--paddin-todo);
+}
+
+main h2{
+    font-weight: bold;
+    text-align: justify;
+    font-size: 1.8rem;
+}
+
+main p{
+    text-align: justify;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+}
+
+aside{
+    background-color: var(--color-cajas-internas);
+    grid-area: sidebar;
+    padding: var(--paddin-todo);
+    display: grid;
+    align-items: center;
+    grid-template-rows: 10% 30% 30% 30%;
+    justify-items: center;
+}
+
+aside h2{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+aside img{
+    height: 10rem;
+    width: 10rem;
+}
+
+.uno{
+    background-color: var(--color-cajas-internas);
+    grid-area: widget1;
+    padding: var(--paddin-todo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.uno h2{
+    font-weight: bold;
+    text-align: justify;
+    font-size: 1.5rem;
+}
+
+.uno img{
+    width: 50%;
+    height: 80%;
+}
+
+.dos{
+    background-color: var(--color-cajas-internas);
+    grid-area: widget2;
+    padding: var(--paddin-todo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dos h2{
+    font-weight: bold;
+    text-align: justify;
+    font-size: 1.3rem;
+}
+
+.dos img{
+    width: 25%;
+    height: 70%;
+}
+
+footer{
+    background-color: var(--color-header-footer);
+    grid-area: footer;
+    color: white;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: var(--paddin-todo);
+    display: grid;
+    justify-items: flex-end;
+    align-items: flex-end;
+}
